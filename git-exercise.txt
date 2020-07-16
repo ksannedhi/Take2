@@ -32,7 +32,9 @@ Look at the 'files changed' in the pull request. Merge the pull request.
 11. Edit one of your files. Once again use 'git diff' to look at the change pending in that file. Use 'git checkout -- <file>' to discard that pending change.
 Verify your 'git status' is now clean.
 
-12. In GitHub, edit the README.md file and commit a change to the 'master' branch in GitHub. On the lab server also edit the README.md file and commit the change into the lab server. Use 'git pull' to pull the 'master' branch from GitHub into the lab server. At this point you should have a merge conflict. It should look something like this:
+12. In GitHub, edit the README.md file and commit a change to the 'master' branch in GitHub.
+On the lab server also edit the README.md file and commit the change into the lab server. Use 'git pull' to pull the 'master' branch from GitHub into the lab server.
+At this point you should have a merge conflict. It should look something like this:
 $ git pull origin master
 From https://github.com/ktbyers/pyneta
  * branch            master     -> FETCH_HEAD
@@ -54,7 +56,9 @@ Create a merge conflict.
 More changes to readme.
 >>>>>>> 1690ce5a6ddb640198ccf3bca26f32a65d772b92
 
-The '<<<<<', '=====', '>>>>>' indicate where the inconsistencies on the file are. Git is basically stating I have this first line(s) from one change and this second line(s) from another change and I don't know which one you want to keep. Which line do you want to keep (could be one of the lines, both of the lines, none of the lines).
+The '<<<<<', '=====', '>>>>>' indicate where the inconsistencies on the file are.
+Git is basically stating I have this first line(s) from one change and this second line(s) from another change and I don't know which one you want to keep.
+Which line do you want to keep (could be one of the lines, both of the lines, none of the lines).
 
 Here is how I fixed the merge conflict in the above file:
 $ cat README.md 
